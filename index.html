@@ -9,25 +9,43 @@
 </head>
 <body>
     <div class="container">
-        <div class="item">
-            <p class="head-input">Budget</p>
-            <input type="text" class="my-input" placeholder="Input budget" id="budget"/>
-            <div class="warning">Please, enter a number or leave a blank field</div>
+        <h1>2Weeks</h1>
+        <h3>Web-App for planning budget</h3>
+        <h6>version 1.0.0</h6>
+        <div class="inputs">
+            <form name="check">
+                <p class="head-input">INCOMES</p>
+                <div class="budget">
+                    <p>Budget</p>
+                    <input type="text" class="my-input" placeholder="Input budget">
+                    <div class="warning">Please, enter a number or leave a blank field</div>
+                </div>
+                <p class="head-input">EXPENCES</p>
+                <div class="item">
+                    <p>Food</p>
+                    <input type="text" class="my-input" placeholder="Input weekly food expences">
+                    <div class="warning">Please, enter a number or leave a blank field</div>
+                </div>
+                <div class="item">
+                    <p>Gazoline</p>
+                    <input type="text" class="my-input" placeholder="Input weekly gazoline expences">
+                    <div class="warning">Please, enter a number or leave a blank field</div>
+                </div>
+                <div class="item">
+                    <p>Wear</p>
+                    <input type="text" class="my-input" placeholder="Input weekly wear expences">
+                    <div class="warning">Please, enter a number or leave a blank field</div>
+                </div>
+                <div class="buttons">
+                    <input type="button" value="Count" id="btn">
+                    <input type="reset" value="Clear" id="clrBtn">
+                </div>
+            </form>
         </div>
-        <div class="item">
-            <p>Food</p>
-            <input type="text" class="my-input" placeholder="Input weekly food expences" id="food"/>
-            <div class="warning">Please, enter a number or leave a blank field</div>
-        </div>
-        <div class="item">
-            <p>Gazoline</p>
-            <input type="text" class="my-input" placeholder="Input weekly gazoline expences" id="gazoline"/>
-            <div class="warning">Please, enter a number or leave a blank field</div>
-        </div>
-        <div class="item">
-            <input type="button" value="Count" id="btn">
-        </div>
-    </div>
+        <footer>
+            <p>All rights reserved by Pavel Belkin © 2020</p>
+        </footer>
+    </div> 
     <script src="js/main.js"></script>
 </body>
 </html>
