@@ -1,33 +1,34 @@
-var myInput = document.getElementsByTagName('input');
-var myWarn = document.getElementsByClassName('warning');
-var myButton = document.getElementById('btn');
+/* создаем пустой массив для значений из полей ввода и присваиваем 
+переменной l количество таких полей */
+var myInputArr = [],
+    l = document.getElementsByClassName('my-input').length,
+    myWarn = [],
+    myButton = document.getElementById('btn'),
+    i;
 
+/* создаем функциюб которая наполняет значениями массивы */
+function saveArr() {
+    for (i = 0; i < l; i++) {
+        myInputArr[i] = +document.getElementsByClassName('my-input')[i].value;
+        myWarn[i] = document.getElementsByClassName('warning')[i];
+    }
+}
 
-//изменим все на массив
+/* создаем функцию которая проверяет число ли ввел пользователь и
+в зависимости от значения добавляет/удаляет значение класса */
+function checkInputType() {
+    saveArr();
 
-/*
-This function checks type of input valuу 
-and add text if value is not a number */
-function myFunc() {
-    for (i=0; i < 3; i++) {
-        myInputValue = +myInput[i].value;
-        if (isNaN(myInputValue) == true) {
+    for (i=0; i < l; i++) {
+        if (isNaN(myInputArr[i]) == true) {
             myWarn[i].classList.add("show");
         } else {
             myWarn[i].classList.remove("show");
         }
     }
 }
-function checkAll() {
-    for (i=0; i < 3; i++) {
-        myInput[i].onblur = myFunc;
-    }
-}
-checkAll();
 
-/*
-This function counts budget
-function countBudget() {
-}
+/* создаем функцию которая запускает функцию проверки на число после 
+того, как пользователь вышел из поля ввода*/
 
-myButton.onclick = countBudget; */
+myButton.onclick = checkInputType;
