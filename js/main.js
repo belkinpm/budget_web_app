@@ -59,7 +59,7 @@ function countBudget() {
 
     for (i=1; i<l; i++) {
         myInputArr[i] = +myInput[i].value;
-        myBudget = myBudget - myInputArr[i];
+        myBudget = myBudget - myInputArr[i]*2;
     }
     if (isNaN(myBudget) == true) {
         alert('Please, check red fields and enter only numbers or leave a blank fields')
