@@ -2,6 +2,9 @@ var myInput = document.getElementsByTagName('input');
 var myWarn = document.getElementsByClassName('warning');
 var myButton = document.getElementById('btn');
 
+
+//изменим все на массив
+
 /*
 This function checks type of input valuу 
 and add text if value is not a number */
