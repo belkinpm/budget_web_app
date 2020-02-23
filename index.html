@@ -4,48 +4,188 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <title>Budget Web app</title>
 </head>
 <body>
-    <div class="container">
-        <h1>2Weeks</h1>
-        <h3>Web-App for planning budget</h3>
-        <h6>version 1.1.0</h6>
-        <div class="inputs">
+    <div class="container-lg">
+        <!-- navbar -->
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+            <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="logo">
+            2Weeks - Budget Planner (v1.1.0)
+            </a>
+        </nav>
+
+        <!-- two columns of content -->
+        <div class="row">
+
+            <div class="col .col-12 .col-sm-12 .col-md-6 col-lg-6">
+            <!-- form -->
             <form name="check">
-                <p class="head-input">INCOMES</p>
-                <div class="budget">
-                    <p>Budget</p>
-                    <input type="text" class="my-input" placeholder="Input budget for two weeks">
-                    <div class="warning">Please, enter a number or leave a blank field</div>
+
+                <!-- incomes block -->
+                <div class="jumbotron">
+                    <h1 class="display-4">Incomes</h1>
+                    <p class="lead">Please, include all your incomes from 
+                        your job or business for next two weeks and start plan.</p>
+
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-blue id="addon-wrapping">Budget</span>
+                        </div>
+                        <input type="text" class="form-control my-input" placeholder="Input budget for two weeks" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="alert alert-danger hide">
+                        Please, enter a number or leave a blank field.
+                    </div>
                 </div>
-                <p class="head-input">EXPENCES</p>
-                <div class="item">
-                    <p>Food</p>
-                    <input type="text" class="my-input" placeholder="Input weekly food expences">
-                    <div class="warning">Please, enter a number or leave a blank field</div>
-                </div>
-                <div class="item">
-                    <p>Gazoline</p>
-                    <input type="text" class="my-input" placeholder="Input weekly gazoline expences">
-                    <div class="warning">Please, enter a number or leave a blank field</div>
-                </div>
-                <div class="item">
-                    <p>Wear</p>
-                    <input type="text" class="my-input" placeholder="Input weekly wear expences">
-                    <div class="warning">Please, enter a number or leave a blank field</div>
-                </div>
-                <div class="buttons">
-                    <input type="button" value="Count" id="btn">
-                    <input type="reset" value="Clear" id="clrBtn">
+
+                <!-- expences block -->
+                <div class="jumbotron">
+                    <h1 class="display-4">Expences</h1>
+                    <p class="lead">Plan all your expences for next 
+                        two weeks and push the 'Count Budget' button.</p>
+
+                    <!-- food expences -->
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">Food</span>
+                        </div>
+                        <input type="text" class="form-control my-input" placeholder="Input weekly food expences" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="alert alert-danger hide">
+                        Please, enter a number or leave a blank field.
+                    </div>
+                    
+                    <!-- bills expences -->
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">Bills</span>
+                        </div>
+                        <input type="text" class="form-control my-input" placeholder="Input weekly bills expences" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="alert alert-danger hide">
+                        Please, enter a number or leave a blank field.
+                    </div>
+                    
+                    <!-- gazoline expences -->
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">Gazoline</span>
+                        </div>
+                        <input type="text" class="form-control my-input" placeholder="Input weekly gazoline expences" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="alert alert-danger hide">
+                        Please, enter a number or leave a blank field.
+                    </div>
+
+                    <!-- credit expences -->
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">Credit</span>
+                        </div>
+                        <input type="text" class="form-control my-input" placeholder="Input weekly credit expences" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="alert alert-danger hide">
+                        Please, enter a number or leave a blank field.
+                    </div>
+
+                    <!-- taxes expences -->
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">Taxes</span>
+                        </div>
+                        <input type="text" class="form-control my-input" placeholder="Input weekly Taxes expences" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="alert alert-danger hide">
+                        Please, enter a number or leave a blank field.
+                    </div>
+
+                    <!-- wear expences -->
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">Wear</span>
+                        </div>
+                        <input type="text" class="form-control my-input" placeholder="Input weekly wear expences" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="alert alert-danger hide">
+                        Please, enter a number or leave a blank field.
+                    </div>
+
+                    <!-- education expences -->
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">Education</span>
+                        </div>
+                        <input type="text" class="form-control my-input" placeholder="Input weekly education expences" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="alert alert-danger hide">
+                        Please, enter a number or leave a blank field.
+                    </div>
+
+                    <!-- gifts expences -->
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">Gifts</span>
+                        </div>
+                        <input type="text" class="form-control my-input" placeholder="Input weekly gifts expences" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="alert alert-danger hide">
+                        Please, enter a number or leave a blank field.
+                    </div>
+
+                    <!-- not planned expences -->
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="addon-wrapping">Not planned</span>
+                        </div>
+                        <input type="text" class="form-control my-input" placeholder="Input weekly not planned expences" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="alert alert-danger hide">
+                        Please, enter a number or leave a blank field.
+                    </div>
+
+                    <!-- buttons group -->
+                    <button type="button" class="btn btn-primary">Check Budget</button>
+                    <button type="reset" class="btn btn-secondary">Clear All</button>
                 </div>
             </form>
+            </div>
+            <div class="col .col-12 .col-sm-12 .col-md-6 col-lg-6">
+
+                <!-- advise -->
+                <div class="jumbotron sticky-top j-result">
+                    <h1 class="display-4">Advise</h1>
+                    <div class="result"></div>
+                    <ol>
+                        <li class="lead">Track your expenses.</li>
+                        <li class="lead">Automate it.</li>
+                        <li class="lead">Get out of debt.</li>
+                        <li class="lead">Invest in yourself more.</li>
+                        <li class="lead">Start off small.</li>
+                        <li class="lead">Find contentment with what you have.</li>
+                        <li class="lead">Be more thoughtful about your life and goals.</li>
+                        <li class="lead">Focus on your health and energy.</li>
+                        <li class="lead">Take responsibility for everything.</li>
+                        <li class="lead">Buy, invest, and create assets.</li>
+                    </ol>
+                    <p class="lead">Bonus tip: Have fun!</p>
+                </div>
+
+                <!--  result -->
+            </div>
         </div>
+
+        <!-- footer -->
         <footer>
             <p>All rights reserved by Pavel Belkin © 2020</p>
         </footer>
-    </div> 
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

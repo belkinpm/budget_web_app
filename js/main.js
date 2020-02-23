@@ -1,21 +1,23 @@
 /* создаем пустой массив для значений из полей ввода и присваиваем 
 переменной l количество таких полей */
 var myInput = document.querySelectorAll('.my-input'),
-    myWarn = document.querySelectorAll('.warning'),
+    myWarn = document.querySelectorAll('.alert'),
     l = myInput.length,
-    myButton = document.getElementById('btn'),
-    clearButton = document.getElementById('clrBtn');
+
+    myButton = document.querySelector('.btn-primary'),
+    clearButton = document.querySelector('.btn-secondary'),
+
+    divResult = document.querySelector('.result'),
+    myResult = document.createElement('div');
 
 /* создаем функцию, которая проверяет число ли ввел пользователь и
 в зависимости от значения добавляет/удаляет значение класса */
 function checkInputType() {
     for (var i=0; i < l; i++) {
         if (isNaN(myInput[i].value) == true) {
-            myWarn[i].classList.add("show");
-            myInput[i].classList.add("red-border");
+            myWarn[i].classList.remove("hide");
         } else {
-            myWarn[i].classList.remove("show");
-            myInput[i].classList.remove("red-border");
+            myWarn[i].classList.add("hide");
         }
     }
 }
@@ -33,8 +35,8 @@ checkAll();
 
 function clearAll() {
     for (var i=0; i < l; i++) {
-        myWarn[i].classList.remove("show");
-        myInput[i].classList.remove("red-border");
+        myWarn[i].classList.add("hide");
+        myResult.remove();
     }
 }
 
@@ -45,15 +47,24 @@ function countBudget() {
     for (var i=1; i<l; i++) {
         myBudget -= myInput[i].value*2;
     }
+
     if (isNaN(myBudget) == true) {
-        alert('Please, check red fields and enter only numbers or leave a blank fields')
+        divResult.append(myResult);
+        myResult.className = "alert alert-danger";
+        myResult.innerText = "Please, check red fields and enter only numbers or leave a blank fields";
     } else if (myBudget > 0) {
-        alert('Congradulations!\nYou can save ' + myBudget + 'rub during next two weeks!');
+        divResult.append(myResult);
+        myResult.className = "alert alert-success";
+        myResult.innerText = "Congradulations!\nYou can save " + myBudget + " Rubles during next two weeks!";
     } else if (myBudget < 0) {
         myBudget = myBudget*(-1);
-        alert('You need to find ' + myBudget + 'rub for next two weeks!\nPlease, cut your expences or find additional income!');
+        divResult.append(myResult);
+        myResult.className = "alert alert-danger";
+        myResult.innerText = "You need to find " + myBudget + " Rubles for next two weeks!\nPlease, cut your expences or find additional income!";
     } else {
-        alert('Your budget is very tight!\nYou need to check your expences everyday!');
+        divResult.append(myResult);
+        myResult.className = "alert alert-warning";
+        myResult.innerText = "Your budget is very tight!\nYou need to check your expences everyday!";
     }
 }
 

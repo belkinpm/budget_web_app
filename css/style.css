@@ -1,91 +1,60 @@
-* {
-    margin: 0;
+h1 {
+    margin-bottom: 2rem;
+}
+
+.container-lg {
     padding: 0;
-    font-family: sans-serif;
 }
 
-h1, .budget {
-    border-bottom: solid 1px rgb(133, 133, 133);
+img {
+    margin-right: 0.5rem;
 }
 
-h1 {
-    font-style: italic;
-    font-size: 50px;
-    color: rgb(11, 96, 207);
+.col {
+    padding: 0;
 }
 
-h1 {
-    padding-bottom: 10px;
+.navbar {
+    margin: 0 -0.5rem;
 }
 
-h3 {
-    padding: 5px 0;
-    font-size: 14px;
+.jumbotron {
+    padding: 2.5rem 2rem;
+    margin: 1rem 0.5rem;
 }
 
-h6 {
-    padding-bottom: 30px;
+.txt-white {
+    color: #ffffff;
 }
 
-h3, h6, footer {
-    color: rgb(133, 133, 133);
+.sticky-top {
+    top: 1rem;
 }
 
-input {
-    height: 20px;
-    width: 200px;
-    margin-top: 5px;
-    padding: 5px;
+.bg-blue {
+    background-color: #e3f2fd
 }
 
-.budget {
-    padding-bottom: 50px;
-    margin-bottom: 20px;
+.input-group {
+    margin-top: 2rem;
 }
 
-.buttons {
-    padding: 50px 0;
+.form-check {
+    margin: 0.5rem 0;
+    color: dimgray;
 }
 
-.container {
-    width: 30vw;
-    height: 100vh;
-    padding: 20px;
-    margin: 0 auto;
-    background-color: rgb(235, 235, 235);
-    display: flex;
-    flex-direction: column;
+.alert {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 
-.inputs {
-    padding: 20px;
-    border: solid 1px rgb(133, 133, 133);
+.hide {
+    display: none;
 }
 
-.item {
-    padding: 10px 0;
-}
-
-.head-input {
-    padding-bottom: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    color: rgb(65, 128, 211);
-}
-
-.warning {
-    visibility: hidden;
-    font-size: 11px;
-    color: red;
-    display: inline-block;
-}
-
-.show {
-    visibility: visible;
-}
-
-.red-border {
-    border-color: rgb(255, 138, 138);
+.btn {
+    margin-top: 4rem;
 }
 
 footer {
@@ -93,16 +62,7 @@ footer {
 }
 
 footer p {
+    text-align: center;
     font-size: 12px;
-}
-
-p {
-    font-size: 14px;
-    color: rgb(107, 107, 107);
-    display: block;
-}
-
-#btn, #clrBtn {
-    display: block;
-    margin: 20px 0;
+    color: darkgray;
 }
