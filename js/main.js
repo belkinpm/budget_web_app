@@ -4,11 +4,14 @@ var myInput = document.querySelectorAll('.my-input'),
     myWarn = document.querySelectorAll('.alert'),
     l = myInput.length,
 
+    myCheckbox = document.querySelectorAll('.form-check-input'),
+
     myButton = document.querySelector('.btn-primary'),
     clearButton = document.querySelector('.btn-secondary'),
 
     divResult = document.querySelector('.result'),
     myResult = document.createElement('div');
+    
 
 /* создаем функцию, которая проверяет число ли ввел пользователь и
 в зависимости от значения добавляет/удаляет значение класса */
@@ -45,7 +48,11 @@ function countBudget() {
     var myBudget = +myInput[0].value;
 
     for (var i=1; i<l; i++) {
-        myBudget -= myInput[i].value*2;
+        if (myCheckbox[i-1].checked == true) {
+            myBudget -= myInput[i].value;
+        } else {
+            myBudget -= myInput[i].value*2;
+        }
     }
 
     if (isNaN(myBudget) == true) {

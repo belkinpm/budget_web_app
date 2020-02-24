@@ -58,10 +58,15 @@ img {
 }
 
 footer {
+    display: flex;
+    flex-wrap: wrap;
     margin: 10px auto;
+    justify-content: space-between;
 }
 
 footer p {
+    padding: 0 2rem;
+    display: inline-block;
     text-align: center;
     font-size: 12px;
     color: darkgray;
